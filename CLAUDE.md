@@ -39,5 +39,5 @@ images/      사진·동영상 (git에 포함되어 배포됨)
 ## 배포
 - 레포: https://github.com/wnstndks/ForFun (브랜치 `main`)
 - GitHub Pages: Settings → Pages → Deploy from a branch → `main` / `(root)`
-- 주소: https://wnstndks.github.io/ForFun/
+- 주소: https://wnstndks.github.io/ForFun/ (커스텀 도메인 없음. CNAME 파일 만들지 말 것)
 - `main`에 push하면 1~2분 뒤 자동 반영.
