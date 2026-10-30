@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>이소진 연대기</title>
+  <meta name="description" content="위대한(?) 인물 이소진의 출생부터 현재까지" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <p class="hero-kicker">국가지정 무형문화재(신청 예정)</p>
+    <h1>이소진 연대기</h1>
+    <p class="hero-sub">한 인간의 위대하고도 사소한 발자취</p>
+    <a class="scroll-hint" href="#timeline">스크롤해서 역사 속으로 ↓</a>
+  </header>
+
+  <main>
+    <section id="timeline" class="section">
+      <h2>제1부 · 생애</h2>
+      <ol class="timeline" id="timeline-list"></ol>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2>제2부 · 사료 갤러리</h2>
+      <p class="section-sub">역사학자들이 엄선한 귀중한 기록물</p>
+      <div class="gallery" id="gallery-grid"></div>
+    </section>
+
+    <section id="quiz" class="section">
+      <h2>제3부 · 이소진 능력시험</h2>
+      <p class="section-sub">당신은 이소진을 얼마나 아는가</p>
+      <div class="quiz-card" id="quiz-box"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>본 사이트는 이소진 본인의 허락을 받았을 수도 있고, 아닐 수도 있습니다.</p>
+    <p>© 이소진 연구소</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" aria-label="닫기">×</button>
+    <div class="lightbox-media" id="lightbox-media"></div>
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
