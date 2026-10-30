@@ -10,6 +10,7 @@ window.SOJIN = {
       age: "0세",
       emoji: "👶",
       title: "경산에서 전설이 태어나다",
+      image: "images/DB0FC6CE-0F3E-4FCA-B5E6-B55CECA199A6.png",
       desc: "1997년 7월 24일, 경산. 한 아기가 우렁찬 목소리로 세상에 등장했다. 어머님은 훗날 이 날을 이렇게 회고했다. \"왜 이리 못생겼나.\"",
     },
     {
@@ -31,6 +32,7 @@ window.SOJIN = {
       age: "20세",
       emoji: "😱",
       title: "절망이 찾아오다",
+      image: "images/IMG_8047.png",
       desc: "주위에서 그렇게 말리던 쌍꺼풀 수술을, 굳이, 했다. 그리고 붓기와의 기나긴 전쟁이 시작되었다.",
     },
     {
@@ -56,15 +58,20 @@ window.SOJIN = {
     },
   ],
 
-  // 사진 갤러리 — images 폴더에 사진을 넣고 src를 맞춰주세요.
-  // 파일이 없으면 emoji가 대신 표시됩니다.
+  // 사진 갤러리 — images 폴더에 파일을 넣고 src를 맞춰주세요.
+  // .mp4는 동영상으로 표시됩니다. 파일이 없거나 재생이 안 되면 emoji가 대신 표시됩니다.
   gallery: [
-    { src: "images/photo1.jpg", emoji: "👶", caption: "\"왜 이리 못생겼나\" — 어머님 (1997)" },
-    { src: "images/photo2.jpg", emoji: "📱", caption: "페이스북 스타 시절. 좋아요 폭격기" },
-    { src: "images/photo3.jpg", emoji: "🫠", caption: "붓기와의 전쟁 중 (사진 열람 주의)" },
-    { src: "images/photo4.jpg", emoji: "🐒", caption: "엉숭이 닮은 꼴 공식 인증샷" },
-    { src: "images/photo5.jpg", emoji: "🚗", caption: "애마 소보루와 함께. 밥은 먹였다" },
-    { src: "images/photo6.jpg", emoji: "📣", caption: "목소리 크기 측정 불가 구간" },
+    { src: "images/DB0FC6CE-0F3E-4FCA-B5E6-B55CECA199A6.png", emoji: "👶", caption: "보라돌이와 나나를 거느리던 유년기. 목소리는 이때부터 컸다" },
+    { src: "images/IMG_8047.png", emoji: "🧊", caption: "2016, 붓기와의 전쟁 최전선. 얼음팩 장착 완료" },
+    { src: "images/IMG_1297.png", emoji: "📞", caption: "통화 중에도 손은 흔든다. 인플루언서의 팬서비스" },
+    { src: "images/IMG_1334.png", emoji: "✌️", caption: "지하철 플랫폼도 포토존으로 만드는 능력" },
+    { src: "images/IMG_9951.png", emoji: "🐒", caption: "의심 가득한 눈빛. 엉숭이 모드 ON" },
+    { src: "images/IMG_1360.png", emoji: "📣", caption: "입 크기 실측 중. 목소리가 큰 이유를 찾았다" },
+    { src: "images/IMG_1340.png", emoji: "👀", caption: "여기 앉아도 되나… 눈치 게이지 MAX" },
+    { src: "images/IMG_1358.png", emoji: "🤳", caption: "페이스타임 풀샷. 상대방은 웃음 참는 중" },
+    { src: "images/IMG_1355.png", emoji: "🫥", caption: "페이스타임 화면의 절반은 벽" },
+    { src: "images/IMG_1299.mp4", emoji: "🎬", caption: "영상 사료 #1" }, // TODO: 캡션
+    { src: "images/IMG_1302.mp4", emoji: "🎬", caption: "영상 사료 #2" }, // TODO: 캡션
   ],
 
   // 퀴즈 — answer는 정답 보기의 순서(0부터 시작)

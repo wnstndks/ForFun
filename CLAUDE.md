@@ -16,7 +16,7 @@ index.html   한 페이지: 히어로 → 연대기 → 갤러리 → 퀴즈 →
 style.css    전체 스타일 (모바일 우선, 데스크톱에서 타임라인 좌우 교차)
 script.js    data.js를 읽어 렌더링, 스크롤 등장 애니메이션, 라이트박스, 퀴즈
 data.js      ★ 콘텐츠 전부: window.SOJIN = { timeline, gallery, quiz, titles }
-images/      사진 (사용자가 직접 넣음)
+images/      사진·동영상 (git에 포함되어 배포됨)
 ```
 
 ## 규칙
@@ -29,7 +29,7 @@ images/      사진 (사용자가 직접 넣음)
 
 ## data.js 형식
 - `timeline[]`: `{ year, age, emoji, title, desc, image? }`
-- `gallery[]`: `{ src, emoji, caption }`
+- `gallery[]`: `{ src, emoji, caption }` — src가 `.mp4`면 동영상으로 표시 (아이폰 HEVC 영상은 일부 브라우저에서 재생 안 될 수 있음 → 이모지로 대체)
 - `quiz[]`: `{ q, options: [4개], answer: 정답 인덱스(0부터) }`
 - `titles[]`: `{ min, title, desc }` — 맞힌 개수가 `min` 이상인 것 중 가장 높은 칭호가 표시됨
 

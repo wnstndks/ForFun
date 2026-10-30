@@ -7,19 +7,32 @@ function el(tag, className, text) {
   return node;
 }
 
-// 이미지가 없으면 이모지로 대체
-function imageOrEmoji(src, emoji, alt) {
+const isVideo = (src) => /\.(mp4|mov|webm)$/i.test(src || "");
+
+// 사진/동영상이 없거나 재생이 안 되면 이모지로 대체
+function mediaOrEmoji(src, emoji, alt, { controls = false } = {}) {
   const wrap = document.createDocumentFragment();
   if (!src) {
     wrap.append(emoji);
     return wrap;
   }
-  const img = new Image();
-  img.src = src;
-  img.alt = alt || "";
-  img.loading = "lazy";
-  img.onerror = () => img.replaceWith(emoji);
-  wrap.append(img);
+  let media;
+  if (isVideo(src)) {
+    media = document.createElement("video");
+    media.src = controls ? src : `${src}#t=0.1`; // 썸네일은 첫 프레임만
+    media.muted = !controls;
+    media.playsInline = true;
+    media.preload = "metadata";
+    media.controls = controls;
+    media.autoplay = controls;
+  } else {
+    media = new Image();
+    media.src = src;
+    media.alt = alt || "";
+    media.loading = "lazy";
+  }
+  media.onerror = () => media.replaceWith(emoji);
+  wrap.append(media);
   return wrap;
 }
 
@@ -67,7 +80,8 @@ const lbCaption = document.getElementById("lightbox-caption");
 gallery.forEach((photo) => {
   const fig = el("figure", "g-item");
   const thumb = el("div", "g-thumb");
-  thumb.append(imageOrEmoji(photo.src, photo.emoji, photo.caption));
+  thumb.append(mediaOrEmoji(photo.src, photo.emoji, photo.caption));
+  if (isVideo(photo.src)) thumb.append(el("span", "g-play", "▶"));
   fig.append(thumb, el("figcaption", null, photo.caption));
   fig.addEventListener("click", () => openLightbox(fig, photo));
   grid.append(fig);
@@ -75,9 +89,8 @@ gallery.forEach((photo) => {
 
 function openLightbox(fig, photo) {
   lbMedia.replaceChildren();
-  const img = fig.querySelector("img");
-  if (img) {
-    lbMedia.append(img.cloneNode());
+  if (fig.querySelector("img, video")) {
+    lbMedia.append(mediaOrEmoji(photo.src, el("div", "big-emoji", photo.emoji), photo.caption, { controls: true }));
   } else {
     lbMedia.append(el("div", "big-emoji", photo.emoji));
   }
@@ -87,6 +100,7 @@ function openLightbox(fig, photo) {
 
 function closeLightbox() {
   lightbox.hidden = true;
+  lbMedia.replaceChildren(); // 재생 중인 동영상 정지
 }
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox || e.target.classList.contains("lightbox-close")) closeLightbox();
