@@ -30,7 +30,7 @@ timeline.forEach((item) => {
   li.append(el("span", "tl-dot", item.emoji));
 
   const card = el("div", "tl-card");
-  card.append(el("div", "tl-meta", `${item.year} · ${item.age}`));
+  card.append(el("div", "tl-meta", [item.year, item.age].filter(Boolean).join(" · ")));
   card.append(el("h3", null, item.title));
   card.append(el("p", null, item.desc));
   if (item.image) {
