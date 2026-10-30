@@ -70,8 +70,8 @@ window.SOJIN = {
     { src: "images/IMG_1340.png", emoji: "👀", caption: "여기 앉아도 되나… 눈치 게이지 MAX" },
     { src: "images/IMG_1358.png", emoji: "🤳", caption: "페이스타임 풀샷. 상대방은 웃음 참는 중" },
     { src: "images/IMG_1355.png", emoji: "🫥", caption: "페이스타임 화면의 절반은 벽" },
-    { src: "images/IMG_1299.mp4", emoji: "🎬", caption: "영상 사료 #1" }, // TODO: 캡션
-    { src: "images/IMG_1302.mp4", emoji: "🎬", caption: "영상 사료 #2" }, // TODO: 캡션
+    { src: "images/IMG_1299.mp4", emoji: "🫶", caption: "팬 여러분께 바치는 하트. 받으세요" },
+    { src: "images/IMG_1302.mp4", emoji: "🏋️", caption: "오직 팬들을 위해 오늘도 땀 흘리는 이소진" },
   ],
 
   // 퀴즈 — answer는 정답 보기의 순서(0부터 시작)
